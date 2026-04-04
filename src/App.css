@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+section {
+  height: 100vh;
+  position: relative; 
+  z-index: 10; 
+}
+html, body {
+  overflow-y: auto;
+  margin: 0;
+  padding: 0;
+}
+
+
+@media (width < 640px) {
+    #navbar {
+        display: none;
+    }
+    #elements {
+        display: none;
+    }
+
+}
