@@ -30,7 +30,7 @@ function Home() {
 
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden">
+      <div className="relative w-full h-screen overflow-hidden flex flex-col items-center">
         
        
         <h1 
@@ -45,12 +45,12 @@ function Home() {
           id='hero-sub' 
           className='absolute left-1/2 top-[50%] -translate-x-1/2 flex items-center justify-center text-center font-normal z-[100] drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 w-[clamp(200px,90vw,600px)] h-fit text-[clamp(15px,1.5vw,40px)]'
         >
-          I build financial tools, automation systems and backends that solve real problems.
+          I build financial tools, automation systems and backends that solve problems.
         </h2>
 
         <button 
           id='hero-button' 
-          className='relative left-[50%] translate-x-[-50%] tra top-[70%] items-center justify-center text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2 hover:shadow-lg drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
+          className='relative top-[70%] text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2 hover:shadow-lg drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
         >
           View Projects
         </button> 
