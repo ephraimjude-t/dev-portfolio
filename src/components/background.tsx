@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react';
 import * as THREE from 'three'
-import './background.css'
 
 function Background(){
     const canvasref = useRef<HTMLCanvasElement>(null);
@@ -20,12 +19,10 @@ function Background(){
             color: '#1B263B'
         });
 
-        // grid dots
-
         const spacing = 45;
 
-        const cols = Math.ceil(window.innerWidth / spacing);
-        const rows = Math.ceil(window.innerHeight / spacing);
+        const cols = Math.ceil(window.innerWidth / spacing)+2;
+        const rows = Math.ceil(window.innerHeight / spacing)+2;
         const count = cols*rows;
 
         const mesh = new THREE.InstancedMesh(geometry, material, count);
@@ -62,7 +59,8 @@ function Background(){
         const lighting = new THREE.AmbientLight( 0xffffff , 10)
         scene.add(lighting)
 
-        const renderer = new THREE.WebGLRenderer({canvas: canvasref.current, antialias: true});
+        const renderer = new THREE.WebGLRenderer({canvas: canvasref.current, alpha: true, antialias: true});
+        renderer.setClearColor(0x000000, 0);
         renderer.setSize(window.innerWidth, window.innerHeight)
         renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
         renderer.render(scene, camera);
@@ -76,6 +74,7 @@ function Background(){
             camera.top = window.innerHeight/2;
             camera.bottom = window.innerHeight/-2;
             camera.updateProjectionMatrix();
+            renderer.setClearColor(0x000000, 0);
             renderer.setSize(width, height);
             renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
             renderer.render(scene, camera)
@@ -152,7 +151,7 @@ function Background(){
     },[])
 
     return(
-        <canvas ref={canvasref} className="fixed top-0 left-0 w-full h-full block z-1 pointer-events-none" >
+        <canvas ref={canvasref} className="fixed top-0 left-0 w-full h-full block pointer-events-none" >
 
         </canvas>
         

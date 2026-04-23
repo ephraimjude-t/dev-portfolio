@@ -76,7 +76,6 @@ function Laptop(){
                 duration:5,
                 scrollTrigger: {
                     trigger:canvasRef.current,
-                    markers:true,
                     scrub:2,
                     scroller:'body',
                     start:'bottom 90%',
@@ -98,7 +97,6 @@ function Laptop(){
                 ease:'power4.out',
                 scrollTrigger: {
                     trigger:canvasRef.current,
-                    markers:true,
                     scrub:2,
                     scroller:'body',
                     start:'bottom 90%',

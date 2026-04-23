@@ -1,91 +1,60 @@
-import {gsap} from 'gsap'
+import { gsap } from 'gsap'
 import { useEffect } from 'react'
 import "./home.css"
 
-
 function Home() {
   useEffect(() => {
+    
     gsap.fromTo("#hero-title, #hero-button", {
-      opacity:0,
-      y:100,
+      opacity: 0,
+      y: 100,
     },
     {
       opacity: 1,
-      y:0,
-      duration:1.2,
-      ease:'power4.inOut'
-
+      y: 0,
+      duration: 1.2,
+      ease: 'power4.inOut'
     })
       
     gsap.fromTo("#hero-sub", {
-      opacity:0,
-      y:100
+      opacity: 0,
+      y: 100
     },
     {
-      opacity:0.7,
-      y:0,
-      duration:1.2,
-      ease:'power4.inOut'
+      opacity: 0.7, 
+      y: 0,
+      duration: 1.2,
+      ease: 'power4.inOut'
     })
-      
-
-  },[])
+  }, [])
 
   return (
     <>
-      <div>
-        <div id='hero-title' className='text-[#1B263B] z-100 drop-shadow-xl backdrop-blur-[2px] ' style={{
-          position:'absolute',
-          display:'flex',
-          width:'clamp(200px, 100vw, 500px)',
-          height:'fit-content',
-          left:'50%',
-          top:'35%',
-          transform:'translateX(-50%)',
-          fontSize:'clamp(15px, 7vw, 40px',
-          fontWeight:'bold',
-          textAlign:'center',
-          alignItems:'center',
-          justifyContent:'center',
-          opacity:0,
+      <div className="relative w-full h-screen overflow-hidden">
+        
+       
+        <h1 
+          id='hero-title' 
+          className='absolute left-1/2 top-[35%] -translate-x-1/2 flex items-center justify-center text-center font-bold z-[100] drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 w-[clamp(200px,100vw,500px)] h-fit text-[clamp(15px,7vw,40px)]'
+        >
+          Hi, I'm Ephraim Jude.
+        </h1>
 
+       
+        <h2 
+          id='hero-sub' 
+          className='absolute left-1/2 top-[50%] -translate-x-1/2 flex items-center justify-center text-center font-normal z-[100] drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 w-[clamp(200px,90vw,600px)] h-fit text-[clamp(15px,1.5vw,40px)]'
+        >
+          I build financial tools, automation systems and backends that solve real problems.
+        </h2>
 
-        }}>
-        Hi, I'm Ephraim Jude.
-        </div>
-        <p id='hero-sub' className='text-[#1B263B] z-100 drop-shadow-xl backdrop-blur-[2px]' style={{
-          position:'absolute',
-          display:'flex',
-          width:'clamp(200px, 90vw, 600px)',
-          height:'fit-content',
-          left:'50%',
-          top:'50%',
-          transform:'translateX(-50%)',
-          fontSize:'clamp(15px, 1.5vw, 40px)',
-          fontWeight:'regular',
-          textAlign:'center',
-          alignItems:'center',
-          justifyContent:'center',
-          opacity:0,
-        }}>
-        I build financial tools, automation systems and backends that solve real problems.
-        </p>
-        <button id='hero-button' className='z-55 text-[#778DA9] hover:text-[#1B263B] rounded-2xl bg-[#1B263B] hover:bg-[#778DA9] drop-shadow-xl backdrop-blur-[2px] transition-all duration-500 ease-in-out ' style={{
-          display:'flex',
-          position:'absolute',
-          padding:'0.5rem 0.5rem',
-          width:'clamp(130px, 12vw, 100px)',
-          height:'clamp(40px, 4vh, 30px)',
-          left:'50%',
-          top:'70%',
-          transform:'translateX(-50%)',
-          textAlign:'center',
-          alignItems:'center',
-          justifyContent:'center',
-          opacity:0
-        }}>
-        View Projects
+        <button 
+          id='hero-button' 
+          className='relative left-[50%] translate-x-[-50%] tra top-[70%] items-center justify-center text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2 hover:shadow-lg drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
+        >
+          View Projects
         </button> 
+        
       </div>
     </>
   )

@@ -1,86 +1,92 @@
 import { useState, useEffect } from "react";
 
-function Navbar(){
-    const [active, setactive] = useState("home");
-    const [scrolled, setscrolled] = useState(false);
-
-    useEffect(()=>{
-        const handlescroll = () =>{
-            setscrolled(window.scrollY>20)
-        }
-
-        window.addEventListener('scroll', handlescroll);
-        return() => window.removeEventListener('scroll', handlescroll);
-    },[])
-
-    const links = [
-        {name:'home', href:'#home'},
-        {name:'about me', href:'#about'},
-        {name:'projects', href:'#projects'},
-        {name:'contact me', href:'#contact'},
-    ]
-
-    return(
-        <nav style={{
-            position: 'fixed',
-            left: '50%',
-            transform: 'translateX(-50%)',
-            top: '2vh',
-            width: 'fit-content',
-            height: '7vh',
-            backgroundColor: 'rgba(224, 225, 221, 0.1)',
-            backdropFilter: 'blur(20px)',
-            borderRadius: '999px',
-            border: '1px solid rgba(255,255,255,0.2)',
-            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
-            zIndex: 50,
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            padding:'0 8px'
-        }}>
-            <ul style={{
-                display: 'flex',
-                position: 'relative',
-                flexDirection: 'row',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: 'fit-content',
-                height: 'fit-content',
-                gap:'10px',
-                listStyle: 'none',
-                margin: 0,
-                boxSizing: 'border-box',
-            }}>
-                {links.map((link) => (
-                    <li key={link.name} style={{ listStyle: 'none' }}>
-                        <a 
-                            href={link.href}
-                            onClick={() => setactive(link.name)}
-                            style={{
-                                color: active === link.name ? '#E0E1DD' : '#1B263B',
-                                backgroundColor: active === link.name ? '#1B263B' : 'transparent',
-                                padding: '8px 24px',
-                                borderRadius:'1000px',
-                                fontSize: '14px',
-                                fontWeight: '500',
-                                transition: 'all 0.2s ease',
-                                textDecoration: 'none',
-                                whiteSpace: 'nowrap',
-                                display: 'inline-flex',
-                                textAlign:'center',
-                                justifyContent:'center',
-                                lineHeight: 1,
-                            }}
-                        >
-                            {link.name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
-    )
-
+interface NavLink {
+  name: string;
+  id: string;
 }
+
+const LINKS: NavLink[] = [
+  { name: "home", id: "home" },
+  { name: "about me", id: "about" },
+  { name: "projects", id: "projects" },
+  { name: "contact me", id: "contact" },
+];
+
+const Navbar = () => {
+  const [active, setActive] = useState<string>("home");
+  const [scrolled, setScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = (): void => {
+      setScrolled(window.scrollY > 20);
+    };
+
+    const observerOptions: IntersectionObserverInit = {
+      root: null,
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
+    };
+
+    const observerCallback: IntersectionObserverCallback = (entries) => {
+      entries.forEach((entry: IntersectionObserverEntry) => {
+        if (entry.isIntersecting) {
+          setActive(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    LINKS.forEach((link) => {
+      const section = document.getElementById(link.id);
+      if (section) observer.observe(section);
+    });
+
+    window.addEventListener("scroll", handleScroll);
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      observer.disconnect();
+    };
+  }, []);
+
+  return (
+    <nav
+      className={`
+        fixed left-1/2 -translate-x-1/2 z-50
+        flex items-center justify-center
+        w-fit h-[7vh] px-2
+        bg-[#E0E1DD]/10 backdrop-blur-[20px]
+        rounded-full border border-white/20
+        shadow-[0_4px_20px_rgba(0,0,0,0.08)]
+        transition-all duration-300
+        ${scrolled ? "top-[1vh] bg-[#E0E1DD]/20" : "top-[2vh]"}
+      `}
+    >
+      <ul className="flex flex-row items-center justify-center gap-[10px] list-none m-0 p-0">
+        {LINKS.map((link) => (
+          <li key={link.name}>
+            <a
+              href={`#${link.id}`}
+              className={`
+                inline-flex items-center justify-center text-center
+                px-6 py-2 rounded-full text-sm font-medium
+                whitespace-nowrap no-underline leading-none
+                transition-all duration-200
+                ${
+                  active === link.id
+                    ? "bg-[#1B263B] text-[#E0E1DD]"
+                    : "bg-transparent text-[#1B263B] hover:bg-[#1B263B]/10"
+                }
+              `}
+            >
+              {link.name}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
 
 export default Navbar;
