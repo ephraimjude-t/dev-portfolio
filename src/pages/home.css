@@ -1,8 +1,6 @@
 @import "tailwindcss";
 
-*{
-    overflow: hidden;
-}
+
 
 div{
     font-family: "Inter", sans-serif;

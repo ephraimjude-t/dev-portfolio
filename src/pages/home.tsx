@@ -50,7 +50,7 @@ function Home() {
 
         <button 
           id='hero-button' 
-          className='relative top-[70%] text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2 hover:shadow-lg drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
+          className='relative top-[70%] text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:shadow-lg hover:-translate-y-2 g drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
         >
           View Projects
         </button> 
