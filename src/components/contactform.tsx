@@ -13,7 +13,6 @@ const Contactform = () => {
         email: '',
         message: '',
     })
-    const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
