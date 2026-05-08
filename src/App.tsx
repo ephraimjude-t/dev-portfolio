@@ -4,18 +4,26 @@ import Home from './pages/home';
 import About from './pages/about';
 import Projects from './pages/projects';
 import Contact from './pages/contact';
-import './App.css';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
+import './App.css'
 
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
-  const aboutRef = useRef(null);
-  const homeRef = useRef(null);
-  const projectsRef = useRef(null);
-  const contactRef = useRef(null);
+  const aboutRef = useRef<HTMLDivElement>(null);
+  const homeRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
+
+  const scrollToProjects = () => {
+    if (!projectsRef.current) return;
+    window.scrollTo({
+      top: projectsRef.current.offsetTop,
+      behavior: 'smooth'
+    })
+  };
   
   useEffect(() =>{
     if (!homeRef.current || !aboutRef.current || !projectsRef.current || !contactRef.current) return;
@@ -85,32 +93,34 @@ function App() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 w-full h-screen -z-10">
-        <Background />
-      </div>
 
-      <div className="w-fit h-fit relative z-50">
-        <Navbar />
-      </div>
+        <div className="fixed top-0 left-0 w-full h-screen -z-10">
+          <Background />
+        </div>
 
-      <main className="relative z-20">
+        <div id="navbar" className="w-fit h-fit relative z-50 ">
+          <Navbar />
+        </div>
         
-        <section ref={homeRef} id="home" className="h-screen relative z-20">
-          <Home />
-        </section>
+        <main className=" w-full h-screen relative z-20">
+          
+          <section ref={homeRef} id="home" className="h-screen w-full relative z-20">
+            <Home  onScrollToProjects={scrollToProjects}/>
+          </section>
 
-        <section ref={aboutRef} id="about" className="h-screen relative z-20 opacity-0">
-          <About />
-        </section>
+          <section ref={aboutRef} id="about" className="min-h-screen w-full relative z-20 opacity-0">
+            <About />
+          </section>
 
-        <section ref={projectsRef} id="projects" className="min-h-screen relative z-20 opacity-0">
-          <Projects />
-        </section>
+          <section ref={projectsRef} id="projects" className="min-h-screen w-full relative z-20 opacity-0">
+            <Projects />
+          </section>
 
-        <section ref={contactRef} id="contact" className="min-h-screen relative z-20 opacity-0">
-          <Contact />
-        </section>
-      </main>
+          <section ref={contactRef} id="contact" className="min-h-screen w-full relative z-20 opacity-0">
+            <Contact />
+          </section>
+        </main>
+
     </>
   );
 }

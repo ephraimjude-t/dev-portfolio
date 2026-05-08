@@ -88,7 +88,7 @@ const Contactform = () => {
                             />
                         </div>
                         <div className="flex flex-row gap-20">
-                            <button type="submit" disabled={status === 'sending'} className=" text-md h-fit w-[clamp(50px,10vw,200px)] bg-[#1B263B] text-[#778DA9] rounded-lg hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2  hover:shadow-lg transition-all duration-500 ease-in-out ">
+                            <button type="submit" disabled={status === 'sending'} className=" text-md h-[2rem] w-[10rem] bg-[#1B263B] text-[#778DA9] rounded-lg hover:bg-[#778DA9] hover:text-[#1B263B] hover:-translate-y-2  hover:shadow-lg transition-all duration-500 ease-in-out ">
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
 

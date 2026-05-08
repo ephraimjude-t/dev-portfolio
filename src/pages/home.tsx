@@ -2,7 +2,11 @@ import { gsap } from 'gsap'
 import { useEffect } from 'react'
 import "./home.css"
 
-function Home() {
+interface ScrollbuttonProps {
+  onScrollToProjects: () => void;
+}
+
+function Home({ onScrollToProjects }: ScrollbuttonProps) {
   useEffect(() => {
     
     gsap.fromTo("#hero-title, #hero-button", {
@@ -30,31 +34,30 @@ function Home() {
 
   return (
     <>
-      <div className="relative w-full h-screen overflow-hidden flex flex-col items-center">
-        
-       
-        <h1 
-          id='hero-title' 
-          className='absolute left-1/2 top-[35%] -translate-x-1/2 flex items-center justify-center text-center font-bold z-[100] drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 w-[clamp(200px,100vw,500px)] h-fit text-[clamp(15px,7vw,40px)]'
-        >
-          Hi, I'm Ephraim Jude.
-        </h1>
-
-       
-        <h2 
-          id='hero-sub' 
-          className='absolute left-1/2 top-[50%] -translate-x-1/2 flex items-center justify-center text-center font-normal z-[100] drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 w-[clamp(200px,90vw,600px)] h-fit text-[clamp(15px,1.5vw,40px)]'
-        >
-          I build financial tools, automation systems and backends that solve problems.
-        </h2>
-
-        <button 
-          id='hero-button' 
-          className='relative top-[70%] text-center z-[55] rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:shadow-lg hover:-translate-y-2 g drop-shadow-xl backdrop-blur-[2px] w-[clamp(10px,12vw,130px)] h-[clamp(30px,10vh,40px)]'
-        >
-          View Projects
-        </button> 
-        
+      <div className='w-full min-h-screen flex flex-col p-5 gap-20 items-center justify-center text-center'>
+        <div className="flex flex-col gap-5">
+          <h1 
+            id='hero-title' 
+            className='font-bold drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[2rem] md:text-[2rem] lg:text-[3rem]'
+          >
+            Hi, I'm Ephraim Jude.
+          </h1>
+          <h2 
+            id='hero-sub' 
+            className='w-[40rem] font-normal drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[clamp(15px,1.5vw,40px)]'
+          >
+            I build financial tools, automation systems and backends that solve problems.
+          </h2>       
+        </div>
+        <div>
+          <button 
+            onClick={onScrollToProjects}
+            id='hero-button' 
+            className=' rounded-2xl transition-all duration-500 ease-in-out opacity-0 p-2 bg-[#1B263B] text-[#778DA9] hover:bg-[#778DA9] hover:text-[#1B263B] hover:shadow-lg hover:-translate-y-2  drop-shadow-xl backdrop-blur-[2px] w-[clamp(5rem,9rem,20rem)] h-[clamp(1rem,2.5rem,3rem)]'
+          >
+            View Projects
+          </button> 
+        </div>
       </div>
     </>
   )

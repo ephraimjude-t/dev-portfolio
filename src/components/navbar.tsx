@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 interface NavLink {
   name: string;
   id: string;

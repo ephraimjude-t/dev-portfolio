@@ -1,12 +1,8 @@
 @import "tailwindcss";
 
 
-
 @media (width < 640px) {
     #navbar {
-        display: none;
-    }
-    #elements {
         display: none;
     }
 
