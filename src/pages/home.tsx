@@ -44,7 +44,7 @@ function Home({ onScrollToProjects }: ScrollbuttonProps) {
           </h1>
           <h2 
             id='hero-sub' 
-            className='w-[40rem] font-normal drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[clamp(15px,1.5vw,40px)]'
+            className=' p-5 w-[25rem] md:w-[40rem] font-normal drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[clamp(15px,1.5vw,40px)]'
           >
             I build financial tools, automation systems and backends that solve problems.
           </h2>       

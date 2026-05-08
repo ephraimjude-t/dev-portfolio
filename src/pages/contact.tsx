@@ -15,7 +15,7 @@ function Contact(){
                 </p>
                 <div className="p-5 items-center flex flex-col md:flex-row gap-20">
                     <div className="relative p-5 bg-[#D1D2CD]/20 border border-white/40 hover:-translate-y-2 backdrop-blur-[2px] hover:border-white/70 drop-shadow-xl rounded-[50px] hover:shadow-lg transition-all transform-gpu flex flex-col items-center justify-center
-                                w-[25rem]  tracking-[0.05em]">
+                                w-[20.5rem]  tracking-[0.05em]">
                                     <div className="flex flex-col gap-5">
                                         <p className="font-bold text-center">
                                             Contact Details
@@ -37,7 +37,7 @@ function Contact(){
 
                     </div>
                     <div className="relative p-5 bg-[#D1D2CD]/20 border border-white/40 hover:-translate-y-2 backdrop-blur-[2px] hover:border-white/70 drop-shadow-xl rounded-[50px] hover:shadow-lg transition-all transform-gpu flex flex-col items-center justify-center
-                                w-[25rem] md:w-[35rem] h-[25.5rem] tracking-[0.05em]">
+                                w-[20.5rem] md:w-[35rem] h-[25.5rem] tracking-[0.05em]">
                                     <div className="bg-[#0D1117] rounded-lg overflow-hidden border border-gray-700 shadow-2xl w-full">
                                         <div className="bg-[#161B22] px-4 py-2 flex gap-2">
                                             <div className="w-3 h-3 rounded-full bg-red-500"></div>

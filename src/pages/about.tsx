@@ -6,7 +6,7 @@ function About() {
     return (
         <div className="p-5 md:p-20  min-h-screen items-center justify-center flex flex-col md:flex-row gap-20">
             <div className="relative p-5 gap-5 bg-[#D1D2CD]/20 border border-white/40 hover:-translate-y-2 backdrop-blur-[2px] hover:border-white/70 drop-shadow-xl rounded-[50px] hover:shadow-lg transition-all transform-gpu flex flex-col items-center justify-center
-                            w-[25rem] md:w-[40rem] tracking-[0.05em]">
+                            w-[20rem] md:w-[40rem] tracking-[0.05em]">
                 
                 <p className=" text-center text-[clamp(15px,1vw,20px)]">
                     I'm Ephraim Jude — a 16 year old developer from Kerala, India.
@@ -20,7 +20,7 @@ function About() {
                     If you need someone who learns fast and ships real things — let's work together.
                 </p>
             </div>
-            <div className="relative p-5 bg-[#D1D2CD]/20 rounded-[50px] backdrop-blur-[2px] border border-white/40 hover:border-white/70 drop-shadow-xl hover:-translate-y-2 hover:shadow-lg transition-all flex flex-col items-center justify-center w-[25rem] md:w-[40rem] ">
+            <div className="relative p-5 bg-[#D1D2CD]/20 rounded-[50px] backdrop-blur-[2px] border border-white/40 hover:border-white/70 drop-shadow-xl hover:-translate-y-2 hover:shadow-lg transition-all flex flex-col items-center justify-center w-[20rem] md:w-[40rem] ">
                 <h2 className="font-bold" >
                     Technical Arsenal
                 </h2>       
