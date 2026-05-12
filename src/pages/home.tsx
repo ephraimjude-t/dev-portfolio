@@ -34,8 +34,8 @@ function Home({ onScrollToProjects }: ScrollbuttonProps) {
 
   return (
     <>
-      <div className='w-full min-h-screen flex flex-col p-5 gap-20 items-center justify-center text-center'>
-        <div className="flex flex-col gap-5">
+      <div className='w-full min-h-screen flex flex-col p-5 gap-15 items-center justify-center text-center'>
+        <div className="flex flex-col ">
           <h1 
             id='hero-title' 
             className='font-bold drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[2rem] md:text-[2rem] lg:text-[3rem]'
@@ -46,7 +46,7 @@ function Home({ onScrollToProjects }: ScrollbuttonProps) {
             id='hero-sub' 
             className=' p-5 w-[25rem] md:w-[40rem] font-normal drop-shadow-xl backdrop-blur-[2px] text-[#1B263B] opacity-0 text-[clamp(15px,1.5vw,40px)]'
           >
-            I build financial tools, automation systems and backends that solve problems.
+            I design and engineer software systems across platforms.
           </h2>       
         </div>
         <div>
