@@ -32,7 +32,7 @@ function App() {
 
       gsap.to(homeRef.current, {
         opacity: 0,
-        y: -50,
+        y: 50,
         duration: 0.2,     
         scrollTrigger: {
           trigger: homeRef.current,
@@ -43,7 +43,7 @@ function App() {
 
 
       gsap.fromTo(aboutRef.current,
-        { opacity: 0, y: 500 },
+        { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
@@ -58,7 +58,7 @@ function App() {
       );
 
       gsap.fromTo(projectsRef.current,
-        { opacity: 0, y: 500 },
+        { opacity: 0, y: 100 },
         {
           opacity: 1,
           y: 0,
@@ -66,14 +66,14 @@ function App() {
           ease: 'power2.out',   
           scrollTrigger: {
             trigger: aboutRef.current, 
-            start: 'bottom 95%',    
+            start: 'bottom 55%',    
             toggleActions: 'play none none reverse'
           }
         }
       );
 
        gsap.fromTo(contactRef.current,
-        { opacity: 0, y: 500 },
+        { opacity: 0, y: 50 },
         {
           opacity: 1,
           y: 0,
@@ -81,7 +81,7 @@ function App() {
           ease: 'power2.out',   
           scrollTrigger: {
             trigger: projectsRef.current, 
-            start: 'bottom 95%',    
+            start: 'bottom 80%',    
             toggleActions: 'play none none reverse'
           }
         }
@@ -94,7 +94,7 @@ function App() {
   return (
     <>
 
-        <div className="fixed top-0 left-0 w-full h-screen -z-10">
+        <div className="fixed top-0 left-0 w-full h-screen">
           <Background />
         </div>
 
@@ -116,7 +116,7 @@ function App() {
             <Projects />
           </section>
 
-          <section ref={contactRef} id="contact" className="min-h-screen w-full relative z-20 opacity-0">
+          <section ref={contactRef} id="contact" className="min-h-screen w-full p-50 relative z-20 opacity-0">
             <Contact />
           </section>
         </main>

@@ -13,10 +13,10 @@ function Projects(){
                     <div className="flex flex-col gap-5 p-6">
                         <div>
                             <h3 className="text-[#1B263B] font-bold text-[1.5rem] ">
-                                Crypto Dashboard
+                                Sentinel 
                             </h3>
                             <p className="text-[#1B263B]/50 font-medium">
-                                Tech Stack: React, Ts, Fastapi, Python
+                                Linux Observability & Monitoring Platform
                             </p>
                         </div>
                         <button className=" w-[5rem] p-2 h-fit border border-[#1B263B] rounded-xl hover:bg-[#1B263B] hover:text-[#FFFF]/50 hover:-translate-y-2 hover:shadow-lg transition-all transform-gpu items-center justify-center fle"

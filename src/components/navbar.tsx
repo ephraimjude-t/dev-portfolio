@@ -22,7 +22,7 @@ const Navbar = () => {
 
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: "-40% 0px -40% 0px",
+      rootMargin: "-10% 0px -10% 0px",
       threshold: 0,
     };
 
