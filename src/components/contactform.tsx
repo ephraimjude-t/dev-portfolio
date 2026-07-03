@@ -2,8 +2,8 @@ import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 
 interface ContactFormData {
-  user_name: string;
-  user_email: string;
+  from_name: string;
+  from_email: string;
   message: string;
 }
 
@@ -12,8 +12,8 @@ const Contactform = () => {
     const form = useRef<HTMLFormElement>(null);
 
     const [message, setMessage] = useState<ContactFormData>({
-        user_name: '',
-        user_email: '',
+        from_name: '',
+        from_email: '',
         message: '',
     })
 
@@ -59,9 +59,9 @@ const Contactform = () => {
                             <p> Name</p>
                             <input className="border border-[#778DA9] w-full rounded-lg px-2 "
                                 type="text"
-                                name="user_name"
+                                name="from_name"
                                 placeholder="Your Name"
-                                value={message.user_name}
+                                value={message.from_name}
                                 onChange={handleChange}
                                 required
                             />
@@ -70,9 +70,9 @@ const Contactform = () => {
                             <p>Email</p>
                             <input className="border border-[#778DA9] w-full rounded-lg px-2"
                                 type="email"
-                                name="user_email"
+                                name="from_email"
                                 placeholder="Your Email"
-                                value={message.user_email}
+                                value={message.from_email}
                                 onChange={handleChange}
                                 required
                             />
@@ -92,8 +92,8 @@ const Contactform = () => {
                                 {status === 'sending' ? 'Sending...' : 'Send Message'}
                             </button>
 
-                            {status === 'success' && <p>$Message sent successfully!</p>}
-                            {status === 'error' && <p>$Something went wrong. Please try again.</p>}
+                            {status === 'success' && <p>Message sent successfully!</p>}
+                            {status === 'error' && <p>Something went wrong. Please try again.</p>}
                         </div>
                     </div>
                 </form>
