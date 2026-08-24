@@ -6,11 +6,11 @@ function Contact(){
 
     return(
         <>
-            <div className="p-5 items-center flex flex-col gap-5">
+            <div className="items-center flex flex-col gap-5">
                 <h2 className=" text-[#1B263B] font-extrabold text-[clamp(2rem,7vh,5rem)]">
                     Let's Connect.
                 </h2>
-                <p className="text-[#1B263B]/70 text-[clamp(0.5rem,5vh,1rem)] tracking-[0.05em] ">
+                <p className="text-[#1B263B]/70 text-[clamp(0.5rem,5vh,1rem)] tracking-[0.05rem] text-center w-[20rem]">
                     Ready to build something togeather or just wanna chat? Drop me a line
                 </p>
                 <div className="p-5 items-center flex flex-col md:flex-row gap-20">

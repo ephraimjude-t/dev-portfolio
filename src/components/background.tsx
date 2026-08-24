@@ -19,7 +19,7 @@ function Background(){
             color: '#1B263B'
         });
 
-        const spacing = 45;
+        const spacing = window.innerWidth < 600 ? 70 : 45;
 
         const cols = Math.ceil(window.innerWidth / spacing)+2;
         const rows = Math.ceil(window.innerHeight / spacing)+2;
@@ -76,7 +76,7 @@ function Background(){
             camera.updateProjectionMatrix();
             renderer.setClearColor(0x000000, 0);
             renderer.setSize(width, height);
-            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1))
             renderer.render(scene, camera)
            
         }

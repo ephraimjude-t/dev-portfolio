@@ -102,7 +102,7 @@ function App() {
           <Navbar />
         </div>
         
-        <main className=" w-full h-screen relative z-20">
+        <main className="w-full relative z-20">
           
           <section ref={homeRef} id="home" className="h-screen w-full relative z-20">
             <Home  onScrollToProjects={scrollToProjects}/>
